@@ -691,10 +691,10 @@ class Tensor(CompoundKernel):
     def __init__(self, kernels):
         """Extends the product to a list of kernels.
 
-        Typically use Projection to define kernels restricted to different
+        Typically, use Projection to define kernels restricted to different
         subsets of the coordinates, and combine them with Sum, Product,
         Tensor, or DirectSum.  Parameter names will be much shorter
-        than if the Product kernel operator + is used repeatedly."""
+        than if the Product kernel operator * is used repeatedly."""
         super(Tensor, self).__init__(kernels)
 
     def __call__(self, X, Y=None, eval_gradient=False):
@@ -722,7 +722,7 @@ class DirectSum(CompoundKernel):
     def __init__(self, kernels):
         """Extends the sum to a list of kernels.
 
-        Typically use Projection to define kernels restricted to different
+        Typically, use Projection to define kernels restricted to different
         subsets of the coordinates, and combine them with Sum, Product,
         Tensor, or DirectSum.  Parameter names will be much shorter
         than if the Sum kernel operator + is used repeatedly."""
@@ -752,7 +752,7 @@ class Projection(Kernel):
 
     .. versionadded:: ??
 
-    Typically used in combination with Product, Tensor, Sum, or DirectSum.
+    Typically, used in combination with Product, Tensor, Sum, or DirectSum.
     For categorical variables, construct dummy-coded indicator variables,
     use Projection onto those columns, and use ExchangeableCorrelation,
     MultiplicativeCorrelation, or UnrestrictiveCorrelation as the kernel.
