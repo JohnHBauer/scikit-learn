@@ -39,7 +39,6 @@
 # added .n_dims
 # added support for deep in get_param
 
-
 import inspect
 import math
 import warnings
@@ -710,7 +709,6 @@ class CompoundKernel(Kernel):
         return np.vstack([kernel.diag(X) for kernel in self.kernels]).T
 
 
-
 class Tensor(CompoundKernel):
     """Extends the product to a list of kernels.
 
@@ -726,15 +724,18 @@ class Tensor(CompoundKernel):
     def __call__(self, X, Y=None, eval_gradient=False):
         """Computes the product of a list of kernels (and their gradients)."""
         if eval_gradient:
+
             def _k_g_mul_(kg0, kg1):
                 k0, g0 = kg0
                 k1, g1 = kg1
                 return (
                     k0 * k1,
-                    np.dstack((
-                        g0 * k1[:, :, np.newaxis],
-                        g1 * k0[:, :, np.newaxis],
-                    )),
+                    np.dstack(
+                        (
+                            g0 * k1[:, :, np.newaxis],
+                            g1 * k0[:, :, np.newaxis],
+                        )
+                    ),
                 )
 
             return reduce(
@@ -765,6 +766,7 @@ class DirectSum(CompoundKernel):
     def __call__(self, X, Y=None, eval_gradient=False):
         """Computes the sum of a list of kernels (and their gradients)."""
         if eval_gradient:
+
             def _k_g_add_(kg0, kg1):
                 k0, g0 = kg0
                 k1, g1 = kg1
@@ -817,11 +819,13 @@ class Projection(Kernel):
         self.columns = columns
         # if this gets too tedious go back to using pandas,
         # which handles int/list of ints transparently
-        assert isinstance(
-            columns, (list, tuple, int, np.ndarray)
-        ), "must be int or list of ints"
+        assert isinstance(columns, (list, tuple, int, np.ndarray)), (
+            "must be int or list of ints"
+        )
         self.columns = [columns] if isinstance(columns, int) else columns
-        assert all(isinstance(i, (int, np.integer)) for i in self.columns), "must be integers"
+        assert all(isinstance(i, (int, np.integer)) for i in self.columns), (
+            "must be integers"
+        )
 
     def __call__(self, X, Y=None, eval_gradient=False):
         """Return the kernel k(X, Y) and optionally its gradient.
