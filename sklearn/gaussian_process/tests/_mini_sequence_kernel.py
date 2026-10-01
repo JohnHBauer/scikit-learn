@@ -1,7 +1,7 @@
 import numpy as np
 
 from sklearn.base import clone
-from sklearn.gaussian_process.kernels import (
+from sklearn.gaussian_process.kernels_original import (
     GenericKernelMixin,
     Hyperparameter,
     Kernel,

@@ -30,7 +30,7 @@ from matplotlib import cm
 from sklearn import datasets
 from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.gaussian_process import GaussianProcessClassifier
-from sklearn.gaussian_process.kernels import RBF
+from sklearn.gaussian_process.kernels_original import RBF
 from sklearn.inspection import DecisionBoundaryDisplay
 from sklearn.kernel_approximation import Nystroem
 from sklearn.linear_model import LogisticRegression

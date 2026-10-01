@@ -125,7 +125,7 @@ _ = plt.title("Limitation of a linear model such as ridge")
 # Thus, let's use such a :class:`~sklearn.kernel_ridge.KernelRidge`.
 import time
 
-from sklearn.gaussian_process.kernels import ExpSineSquared
+from sklearn.gaussian_process.kernels_original import ExpSineSquared
 from sklearn.kernel_ridge import KernelRidge
 
 kernel_ridge = KernelRidge(kernel=ExpSineSquared())
@@ -248,7 +248,7 @@ _ = plt.title(
 # :class:`~sklearn.gaussian_process.kernels.WhiteKernel` that is used to
 # estimate the noise in the dataset.
 from sklearn.gaussian_process import GaussianProcessRegressor
-from sklearn.gaussian_process.kernels import WhiteKernel
+from sklearn.gaussian_process.kernels_original import WhiteKernel
 
 kernel = 1.0 * ExpSineSquared(1.0, 5.0, periodicity_bounds=(1e-2, 1e1)) + WhiteKernel(
     1e-1
@@ -340,7 +340,7 @@ _ = plt.title("Comparison between kernel ridge and gaussian process regressor")
 # Gaussian process allows to combine kernels together. Thus, we could associate
 # the exponential sine squared kernel together with a radial basis function
 # kernel.
-from sklearn.gaussian_process.kernels import RBF
+from sklearn.gaussian_process.kernels_original import RBF
 
 kernel = 1.0 * ExpSineSquared(1.0, 5.0, periodicity_bounds=(1e-2, 1e1)) * RBF(
     length_scale=15, length_scale_bounds="fixed"

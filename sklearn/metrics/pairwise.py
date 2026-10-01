@@ -2645,7 +2645,7 @@ def pairwise_kernels(
            [1., 2.]])
     """
     # import GPKernel locally to prevent circular imports
-    from sklearn.gaussian_process.kernels import Kernel as GPKernel
+    from sklearn.gaussian_process.kernels_original import Kernel as GPKernel
 
     if metric == "precomputed":
         X, _ = check_pairwise_arrays(X, Y, precomputed=True)

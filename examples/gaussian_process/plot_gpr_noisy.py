@@ -85,7 +85,7 @@ _ = plt.ylabel("y")
 # We will create a model using a kernel with a high noise level and a large
 # length scale, which will explain all variations in the data by noise.
 from sklearn.gaussian_process import GaussianProcessRegressor
-from sklearn.gaussian_process.kernels import RBF, WhiteKernel
+from sklearn.gaussian_process.kernels_original import RBF, WhiteKernel
 
 kernel = 1.0 * RBF(length_scale=1e1, length_scale_bounds=(1e-2, 1e3)) + WhiteKernel(
     noise_level=1, noise_level_bounds=(1e-10, 1e1)

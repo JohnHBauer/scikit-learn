@@ -19,7 +19,7 @@ import numpy as np
 
 from sklearn import datasets
 from sklearn.gaussian_process import GaussianProcessClassifier
-from sklearn.gaussian_process.kernels import RBF
+from sklearn.gaussian_process.kernels_original import RBF
 from sklearn.inspection import DecisionBoundaryDisplay
 
 # import some data to play with

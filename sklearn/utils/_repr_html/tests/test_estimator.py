@@ -22,7 +22,7 @@ from sklearn.datasets import load_iris
 from sklearn.decomposition import PCA, TruncatedSVD
 from sklearn.ensemble import StackingClassifier, StackingRegressor, VotingClassifier
 from sklearn.feature_selection import SelectPercentile
-from sklearn.gaussian_process.kernels import ExpSineSquared
+from sklearn.gaussian_process.kernels_original import ExpSineSquared
 from sklearn.impute import SimpleImputer
 from sklearn.kernel_ridge import KernelRidge
 from sklearn.linear_model import LinearRegression, LogisticRegression

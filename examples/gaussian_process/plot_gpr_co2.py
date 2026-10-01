@@ -105,7 +105,7 @@ y = co2_data["co2"].to_numpy()
 # with a large length-scale enforces this component to be smooth. A trending
 # increase is not enforced as to give a degree of freedom to our model. The
 # specific length-scale and the amplitude are free hyperparameters.
-from sklearn.gaussian_process.kernels import RBF
+from sklearn.gaussian_process.kernels_original import RBF
 
 long_term_trend_kernel = 50.0**2 * RBF(length_scale=50.0)
 
@@ -117,7 +117,7 @@ long_term_trend_kernel = 50.0**2 * RBF(length_scale=50.0)
 # taken. The length-scale of this RBF component controls the decay time and is
 # a further free parameter. This type of kernel is also known as locally
 # periodic kernel.
-from sklearn.gaussian_process.kernels import ExpSineSquared
+from sklearn.gaussian_process.kernels_original import ExpSineSquared
 
 seasonal_kernel = (
     2.0**2
@@ -131,7 +131,7 @@ seasonal_kernel = (
 # diffuseness of the length-scales, are to be determined. A rational quadratic
 # kernel is equivalent to an RBF kernel with several length-scale and will
 # better accommodate the different irregularities.
-from sklearn.gaussian_process.kernels import RationalQuadratic
+from sklearn.gaussian_process.kernels_original import RationalQuadratic
 
 irregularities_kernel = 0.5**2 * RationalQuadratic(length_scale=1.0, alpha=1.0)
 
@@ -141,7 +141,7 @@ irregularities_kernel = 0.5**2 * RationalQuadratic(length_scale=1.0, alpha=1.0)
 # components such as local weather phenomena, and a white kernel contribution
 # for the white noise. The relative amplitudes and the RBF's length scale are
 # further free parameters.
-from sklearn.gaussian_process.kernels import WhiteKernel
+from sklearn.gaussian_process.kernels_original import WhiteKernel
 
 noise_kernel = 0.1**2 * RBF(length_scale=0.1) + WhiteKernel(
     noise_level=0.1**2, noise_level_bounds=(1e-5, 1e5)

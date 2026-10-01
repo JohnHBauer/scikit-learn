@@ -18,8 +18,8 @@ from sklearn.base import (
     _fit_context,
     clone,
 )
-from sklearn.gaussian_process.kernels import RBF, Kernel
-from sklearn.gaussian_process.kernels import ConstantKernel as C
+from sklearn.gaussian_process.kernels_original import RBF, Kernel
+from sklearn.gaussian_process.kernels_original import ConstantKernel as C
 from sklearn.preprocessing._data import _handle_zeros_in_scale
 from sklearn.utils import check_random_state
 from sklearn.utils._param_validation import Interval, StrOptions

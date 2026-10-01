@@ -12,8 +12,8 @@ from scipy.linalg import cho_solve, cholesky, solve
 from scipy.special import erf, expit
 
 from sklearn.base import BaseEstimator, ClassifierMixin, _fit_context, clone
-from sklearn.gaussian_process.kernels import RBF, CompoundKernel, Kernel
-from sklearn.gaussian_process.kernels import ConstantKernel as C
+from sklearn.gaussian_process.kernels_original import RBF, CompoundKernel, Kernel
+from sklearn.gaussian_process.kernels_original import ConstantKernel as C
 from sklearn.multiclass import OneVsOneClassifier, OneVsRestClassifier
 from sklearn.preprocessing import LabelEncoder
 from sklearn.utils import check_random_state

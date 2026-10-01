@@ -97,7 +97,7 @@ n_samples = 5
 # Radial Basis Function kernel
 # ............................
 from sklearn.gaussian_process import GaussianProcessRegressor
-from sklearn.gaussian_process.kernels import RBF
+from sklearn.gaussian_process.kernels_original import RBF
 
 kernel = 1.0 * RBF(length_scale=1.0, length_scale_bounds=(1e-1, 10.0))
 gpr = GaussianProcessRegressor(kernel=kernel, random_state=0)
@@ -128,7 +128,7 @@ print(
 # %%
 # Rational Quadratic kernel
 # .........................
-from sklearn.gaussian_process.kernels import RationalQuadratic
+from sklearn.gaussian_process.kernels_original import RationalQuadratic
 
 kernel = 1.0 * RationalQuadratic(length_scale=1.0, alpha=0.1, alpha_bounds=(1e-5, 1e15))
 gpr = GaussianProcessRegressor(kernel=kernel, random_state=0)
@@ -159,7 +159,7 @@ print(
 # %%
 # Exp-Sine-Squared kernel
 # .......................
-from sklearn.gaussian_process.kernels import ExpSineSquared
+from sklearn.gaussian_process.kernels_original import ExpSineSquared
 
 kernel = 1.0 * ExpSineSquared(
     length_scale=1.0,
@@ -195,7 +195,7 @@ print(
 # %%
 # Dot-product kernel
 # ..................
-from sklearn.gaussian_process.kernels import ConstantKernel, DotProduct
+from sklearn.gaussian_process.kernels_original import ConstantKernel, DotProduct
 
 kernel = ConstantKernel(0.1, (0.01, 10.0)) * (
     DotProduct(sigma_0=1.0, sigma_0_bounds=(0.1, 10.0)) ** 2
@@ -228,7 +228,7 @@ print(
 # %%
 # Matérn kernel
 # ..............
-from sklearn.gaussian_process.kernels import Matern
+from sklearn.gaussian_process.kernels_original import Matern
 
 kernel = 1.0 * Matern(length_scale=1.0, length_scale_bounds=(1e-1, 10.0), nu=1.5)
 gpr = GaussianProcessRegressor(kernel=kernel, random_state=0)

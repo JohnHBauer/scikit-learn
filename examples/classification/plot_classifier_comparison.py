@@ -30,7 +30,7 @@ from sklearn.datasets import make_circles, make_classification, make_moons
 from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
 from sklearn.ensemble import AdaBoostClassifier, RandomForestClassifier
 from sklearn.gaussian_process import GaussianProcessClassifier
-from sklearn.gaussian_process.kernels import RBF
+from sklearn.gaussian_process.kernels_original import RBF
 from sklearn.inspection import DecisionBoundaryDisplay
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB

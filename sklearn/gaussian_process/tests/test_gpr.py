@@ -14,13 +14,13 @@ from scipy.optimize import approx_fprime
 from sklearn.base import clone
 from sklearn.exceptions import ConvergenceWarning
 from sklearn.gaussian_process import GaussianProcessRegressor
-from sklearn.gaussian_process.kernels import (
+from sklearn.gaussian_process.kernels_original import (
     RBF,
     DotProduct,
     ExpSineSquared,
     WhiteKernel,
 )
-from sklearn.gaussian_process.kernels import (
+from sklearn.gaussian_process.kernels_original import (
     ConstantKernel as C,
 )
 from sklearn.gaussian_process.tests._mini_sequence_kernel import MiniSeqKernel

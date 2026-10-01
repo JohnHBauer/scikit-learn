@@ -9,7 +9,7 @@ import numpy as np
 import pytest
 
 from sklearn.base import clone
-from sklearn.gaussian_process.kernels import (
+from sklearn.gaussian_process.kernels_original import (
     RBF,
     CompoundKernel,
     ConstantKernel,

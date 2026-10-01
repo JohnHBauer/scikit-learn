@@ -61,7 +61,7 @@ X_train, y_train = X[training_indices], y[training_indices]
 # use a radial basis function (RBF) kernel and a constant parameter to fit the
 # amplitude.
 from sklearn.gaussian_process import GaussianProcessRegressor
-from sklearn.gaussian_process.kernels import RBF
+from sklearn.gaussian_process.kernels_original import RBF
 
 kernel = 1 * RBF(length_scale=1.0, length_scale_bounds=(1e-2, 1e2))
 gaussian_process = GaussianProcessRegressor(kernel=kernel, n_restarts_optimizer=9)

@@ -46,7 +46,7 @@ import numpy as np
 
 from sklearn.base import clone
 from sklearn.gaussian_process import GaussianProcessClassifier, GaussianProcessRegressor
-from sklearn.gaussian_process.kernels import GenericKernelMixin, Hyperparameter, Kernel
+from sklearn.gaussian_process.kernels_original import GenericKernelMixin, Hyperparameter, Kernel
 
 
 class SequenceKernel(GenericKernelMixin, Kernel):
