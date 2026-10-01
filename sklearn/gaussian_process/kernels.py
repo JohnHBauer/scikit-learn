@@ -533,7 +533,7 @@ class GenericKernelMixin:
 
 
 class CompoundKernel(Kernel):
-    """Kernel which is composed of a set of other kernels.
+    """Kernel that is composed of a set of other kernels.
 
     .. versionadded:: 0.18
 
